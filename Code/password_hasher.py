@@ -1,7 +1,5 @@
 # hashing passwords in whirlpool and SHA512
 import hashlib
-import sys
-import codecs
 
 
 def SHA512_hash(input_password):
