@@ -52,8 +52,10 @@ def main():
 
     if (options == 1):
         password = input_password()
-        print("SHA512 HASH: " + str(SHA512_hash(password)))
-        print("SHA384 HASH: " + str(SHA384_hash(password)))
+        print("SHA512 HASH: ")
+        SHA512_hash(password)
+        print("SHA384 HASH: ")
+        SHA384_hash(password)
         print("\r")
     elif (options == 2):
         password = input_password()
