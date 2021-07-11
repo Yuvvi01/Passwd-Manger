@@ -1,4 +1,4 @@
-# hashing passwords in whirlpool and SHA512
+# hashing passwords in SHA384 and SHA512
 import hashlib
 
 
@@ -37,12 +37,12 @@ def input_password():
 
 
 def input_hashes():
-    return str(input("ENTER YOUR PASSWORD: \n"))
+    return str(input("ENTER THE HASHES: \n1 SHA512 \n2 SHA384"))
 
 
 def main():
     print("|                PASSWORD HASHER AND CHECKER            |")
-    print("| A TOOL TO CHECK SHA512 AND SHA382 HASHES OF PASSWORDS |")
+    print("| A TOOL TO CHECK SHA512 AND SHA384 HASHES OF PASSWORDS |")
     print("|                  CREATED BY AGNI DATTA                |")
     print("")
     print(" Please enter\n1 for just finding hashes of your passwords.\n2 for comparing and finding hashes of your passwords.")
@@ -56,9 +56,7 @@ def main():
         SHA384_hash(password)
         print("\r")
     elif (options == 2):
-        password = input_password()
-        hashes = input_hashes()
-        compare_hashes(password, hashes)
+        compare_hashes(input_password(), input_hashes())
     else:
         print(" You entered an incorrect option. Please try again.")
 
