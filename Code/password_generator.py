@@ -3,33 +3,6 @@
 import random
 from more_itertools import random_permutation
 
-# actual function which generates the password
-
-
-def generatePassword(password_length):
-
-    # initialzing the string arrays which contains the possible charecters which can be used in a password.
-    small_alphabet = "abcdefghijklmnopqrstuvwxyz"
-    capital_alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    symbols = "!@#$%^&*()_+=-[]{/}><"
-    numbers = "0123456789"
-    alphabet = numbers + small_alphabet + symbols + capital_alphabet
-    passwords = []
-
-    # shuffles the alphabet string with random permutation this increases randomization
-    ''.join(random_permutation(alphabet))
-
-    # creating a function to create and return the the password.
-    for i in password_length:
-
-        password = ""
-        for j in range(i):
-            next_letter_index = random.randrange(len(alphabet))
-            password = password + alphabet[next_letter_index]
-
-        passwords.append(password)
-
-    return passwords
 
 # main function which takes the user input for the following parameters:
 # number of passwords to be generated
@@ -63,6 +36,34 @@ def main():
     for i in range(numPasswords):
         print("")
         print("Password #" + str(i+1) + " = " + Password[i])
+
+# actual function which generates the password
+
+
+def generatePassword(password_length):
+
+    # initialzing the string arrays which contains the possible charecters which can be used in a password.
+    small_alphabet = "abcdefghijklmnopqrstuvwxyz"
+    capital_alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    symbols = "!@#$%^&*()_+=-[]{/}><"
+    numbers = "0123456789"
+    alphabet = numbers + small_alphabet + symbols + capital_alphabet
+    passwords = []
+
+    # shuffles the alphabet string with random permutation this increases randomization
+    ''.join(random_permutation(alphabet))
+
+    # creating a function to create and return the the password.
+    for i in password_length:
+
+        password = ""
+        for j in range(i):
+            next_letter_index = random.randrange(len(alphabet))
+            password = password + alphabet[next_letter_index]
+
+        passwords.append(password)
+
+    return passwords
 
 
 main()
