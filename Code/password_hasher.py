@@ -24,30 +24,33 @@ def main():
 
 # compare the hashes as entered by the user
 
+
 def compare_hashes(input_password, input_hashes):
-    # encoding the entered password and hash in utf-8 codec. 
+    # encoding the entered password and hash in utf-8 codec.
     input_password.encode('utf-8')
     input_hashes.encode('utf-8')
 
     if (input_hashes == SHA512_hash(input_password) and input_hashes == SHA384_hash(input_password)):
         print("The given password and hash match both SHA512 and SHA384 cryptographical algorithms.")
     elif (input_hashes == SHA512_hash(input_password) and input_hashes != SHA384_hash(input_password)):
-        print("The given password matches the SHA512 algorithm but not the SHA384 algorithm.")
+        print(
+            "The given password matches the SHA512 algorithm but not the SHA384 algorithm.")
     elif (input_hashes == SHA384_hash(input_password) and input_hashes != SHA512_hash(input_password)):
-        print("The given password matches the SHA384 algorithm but not the SHA512 algorithm.")
+        print(
+            "The given password matches the SHA384 algorithm but not the SHA512 algorithm.")
     else:
         print("The password ans hashes do not match. Please recheck.")
 
 
 def SHA512_hash(input_password):
     # returns resultant SHA512 hash
-    result = hashlib.sha512(input_password.encode('utf-8')).hexdigest()
+    result = hashlib.sha512(input_password).hexdigest().encode('utf-8')
     print(result)
 
 
 def SHA384_hash(input_password):
     # returns resultant SHA384 hash
-    result = hashlib.sha384(input_password.encode('utf-8')).hexdigest()
+    result = hashlib.sha384(input_password).hexdigest().encode('utf-8')
     print(result)
 
 
