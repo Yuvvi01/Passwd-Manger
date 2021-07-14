@@ -41,4 +41,3 @@ if __name__=="__main__":
 	
 	printStrongNess(input_string)
 
-# This code is contributed by Yash_R
